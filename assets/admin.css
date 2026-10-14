@@ -1,0 +1,708 @@
+/**
+ * استایل صفحات مدیریت «ربات پیام‌رسان آرما»
+ * رویکرد: نزدیک به ظاهر استاندارد پیشخوان وردپرس، با چیدمان بازتر و خوانا در حالت RTL.
+ */
+
+:root {
+    --armma-accent: #2271b1;
+    --armma-accent-dark: #135e96;
+    --armma-accent-soft: #f0f6fc;
+    --armma-success: #1a7f37;
+    --armma-success-bg: #edf9ee;
+    --armma-success-border: #b8e6bc;
+    --armma-warn: #8a6100;
+    --armma-warn-bg: #fcf6e6;
+    --armma-warn-border: #f0d795;
+    --armma-error: #b32d2e;
+    --armma-error-bg: #fcedee;
+    --armma-error-border: #f1b7ba;
+    --armma-border: #dcdcde;
+    --armma-border-soft: #f0f0f1;
+    --armma-muted: #646970;
+    --armma-text: #1d2327;
+    --armma-surface: #fff;
+    --armma-surface-alt: #f6f7f7;
+}
+
+.armma-wrap {
+    direction: rtl;
+    text-align: right;
+    max-width: 1080px;
+    margin-left: 20px;
+}
+
+.armma-wrap .wp-header-end {
+    margin: 0;
+    border: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ---------- هدر صفحه ---------- */
+
+.armma-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--armma-surface);
+    border: 1px solid var(--armma-border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 16px 0 14px;
+}
+
+.armma-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.armma-header-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: var(--armma-accent);
+    flex-shrink: 0;
+}
+
+.armma-header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--armma-text);
+}
+
+.armma-header-sub {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--armma-muted);
+}
+
+.armma-header-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* نشان وضعیت (روشن/ناقص/خاموش) */
+.armma-status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid var(--armma-border);
+    background: var(--armma-surface-alt);
+    color: var(--armma-muted);
+}
+
+.armma-status-chip .armma-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.armma-status-on {
+    background: var(--armma-success-bg);
+    border-color: var(--armma-success-border);
+    color: var(--armma-success);
+}
+
+.armma-status-warn {
+    background: var(--armma-warn-bg);
+    border-color: var(--armma-warn-border);
+    color: var(--armma-warn);
+}
+
+/* ---------- نوار تب‌ها (استاندارد وردپرس، با فاصله‌گذاری RTL) ---------- */
+
+.armma-nav.nav-tab-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+    margin: 0 0 18px;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.armma-nav .nav-tab {
+    margin-right: 0;
+    margin-left: 4px;
+    float: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* ---------- کارت‌ها ---------- */
+
+.armma-card {
+    background: var(--armma-surface);
+    border: 1px solid var(--armma-border);
+    border-radius: 8px;
+    margin: 0 0 16px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+}
+
+.armma-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--armma-border-soft);
+    background: var(--armma-surface-alt);
+    border-radius: 8px 8px 0 0;
+}
+
+.armma-card-head h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--armma-text);
+}
+
+.armma-card-head-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.armma-card-body {
+    padding: 6px 22px 18px;
+}
+
+/* کارت کلید اصلی: کمی برجسته‌تر از بقیه */
+.armma-card-master .armma-card-head {
+    background: var(--armma-accent-soft);
+    border-bottom-color: #cfe2f3;
+}
+
+/* نوار رنگی کنار کارت هر پیام‌رسان، برای تفکیک سریع بصری */
+.armma-platform-card {
+    border-right-width: 3px;
+    border-right-style: solid;
+    border-right-color: var(--armma-border);
+}
+
+.armma-platform-card[data-platform="rubika"] { border-right-color: #f0355a; }
+.armma-platform-card[data-platform="bale"]   { border-right-color: #14a45c; }
+
+/* ---------- ردیف فیلدها ---------- */
+
+.armma-field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--armma-border-soft);
+}
+
+.armma-field:last-child {
+    border-bottom: 0;
+    padding-bottom: 4px;
+}
+
+.armma-field-label {
+    flex: 0 0 180px;
+    padding-top: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--armma-text);
+    line-height: 1.6;
+}
+
+.armma-field-control {
+    flex: 1 1 380px;
+    min-width: 0;
+}
+
+.armma-input {
+    max-width: 100%;
+    min-height: 32px;
+}
+
+input.armma-input {
+    width: 320px;
+    max-width: 100%;
+}
+
+.armma-input-wide,
+textarea.armma-input-wide {
+    width: 100%;
+}
+
+.armma-amount-input {
+    width: 200px;
+}
+
+.armma-input-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.armma-hint {
+    margin: 7px 0 0;
+    font-size: 13px;
+    color: var(--armma-muted);
+    line-height: 1.7;
+}
+
+.armma-hint-lead {
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.armma-actions {
+    margin: 10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.armma-inline-label {
+    font-size: 13px;
+    color: var(--armma-text);
+    margin-left: 8px;
+}
+
+/* ---------- «توضیح بیشتر» ---------- */
+
+.armma-more {
+    margin: 8px 0 0;
+    font-size: 13px;
+}
+
+.armma-more > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: var(--armma-accent);
+    font-weight: 500;
+    list-style: none;
+    user-select: none;
+}
+
+.armma-more > summary::-webkit-details-marker { display: none; }
+
+.armma-more > summary::before {
+    content: "؟";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 11px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.armma-more > summary:hover { color: var(--armma-accent-dark); }
+
+.armma-more-body {
+    margin-top: 8px;
+    padding: 12px 14px;
+    background: var(--armma-surface-alt);
+    border: 1px solid var(--armma-border-soft);
+    border-radius: 6px;
+    color: var(--armma-muted);
+    line-height: 1.9;
+}
+
+/* ---------- سوییچ روشن/خاموش ---------- */
+
+.armma-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--armma-text);
+}
+
+.armma-switch input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    flex-shrink: 0;
+    width: 38px;
+    height: 21px;
+    margin: 0;
+    background: #c3c4c7;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .15s ease;
+}
+
+.armma-switch input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    transition: right .15s ease;
+    margin: 0;
+}
+
+.armma-switch input[type="checkbox"]:checked {
+    background: var(--armma-accent);
+}
+
+.armma-switch input[type="checkbox"]:checked::before {
+    right: 20px;
+}
+
+.armma-switch input[type="checkbox"]:focus-visible {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--armma-accent);
+}
+
+/* ---------- گزینه‌ها (چک‌باکس/رادیو) ---------- */
+
+.armma-choice-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.armma-choice-block {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.armma-choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--armma-surface);
+    border: 1px solid var(--armma-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color .15s ease, background-color .15s ease;
+}
+
+.armma-choice:hover {
+    border-color: var(--armma-accent);
+    background: var(--armma-accent-soft);
+}
+
+.armma-choice input {
+    margin: 0;
+}
+
+.armma-choice input:checked + span {
+    font-weight: 600;
+    color: var(--armma-accent-dark);
+}
+
+.armma-choice-note {
+    color: var(--armma-muted);
+    font-weight: 400;
+}
+
+/* ---------- فیلدهای وابسته به یک سوییچ ---------- */
+
+.armma-dependent {
+    display: none;
+    margin-top: 12px;
+    padding: 12px 14px 14px;
+    border: 1px dashed var(--armma-border);
+    border-radius: 6px;
+    background: #fbfbfc;
+}
+
+.armma-dependent.is-visible {
+    display: block;
+}
+
+/* ---------- نتیجه عملیات Ajax و لیست چت‌ها ---------- */
+
+.armma-result {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.armma-result:empty { display: none; }
+
+.armma-result.success { color: var(--armma-success); }
+.armma-result.error   { color: var(--armma-error); }
+.armma-result.loading { color: var(--armma-muted); font-weight: 500; }
+
+.armma-fetch-result { margin-top: 8px; }
+
+.armma-chat-list:not(:empty) {
+    margin-top: 10px;
+    max-width: 520px;
+}
+
+.armma-chat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--armma-surface-alt);
+    border: 1px solid var(--armma-border);
+    border-radius: 6px;
+    padding: 9px 13px;
+    margin-bottom: 7px;
+    transition: border-color .15s ease, background .15s ease;
+}
+
+.armma-chat-item:hover {
+    border-color: var(--armma-accent);
+    background: var(--armma-accent-soft);
+}
+
+.armma-chat-item .armma-chat-title { font-weight: 600; font-size: 13px; }
+
+.armma-chat-item .armma-chat-id {
+    direction: ltr;
+    color: var(--armma-muted);
+    font-size: 12px;
+}
+
+.armma-chat-title-badge {
+    display: inline-block;
+    background: var(--armma-success-bg);
+    border: 1px solid var(--armma-success-border);
+    color: var(--armma-success);
+    border-radius: 999px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    max-width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ---------- نوار ذخیره چسبان ---------- */
+
+.armma-save-bar {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--armma-surface);
+    border: 1px solid var(--armma-border);
+    border-radius: 8px;
+    padding: 12px 22px;
+    margin: 0 0 8px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, .06);
+}
+
+.armma-save-bar .button-primary {
+    min-width: 150px;
+    text-align: center;
+}
+
+.armma-save-hint {
+    font-size: 12px;
+    color: var(--armma-muted);
+}
+
+/* ---------- آکاردئون راهنما ---------- */
+
+.armma-accordion {
+    margin-top: 12px;
+}
+
+.armma-accordion-item {
+    border: 1px solid var(--armma-border);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: var(--armma-surface);
+    overflow: hidden;
+}
+
+.armma-accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 16px;
+    background: var(--armma-surface-alt);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--armma-text);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background-color .15s ease;
+}
+
+.armma-accordion-header::-webkit-details-marker { display: none; }
+
+.armma-accordion-header::before {
+    content: "+";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--armma-accent);
+    flex-shrink: 0;
+}
+
+.armma-accordion-item[open] > .armma-accordion-header::before {
+    content: "−";
+}
+
+.armma-accordion-header:hover {
+    background: var(--armma-accent-soft);
+}
+
+.armma-accordion-body {
+    padding: 14px 18px;
+    border-top: 1px solid var(--armma-border-soft);
+    line-height: 1.95;
+    font-size: 13px;
+}
+
+.armma-accordion-body ol,
+.armma-accordion-body ul {
+    margin: 0 20px 10px 0;
+    padding: 0;
+}
+
+.armma-accordion-body ul { list-style: disc; }
+
+.armma-accordion-body li { margin-bottom: 5px; }
+
+.armma-accordion-body p:first-child { margin-top: 0; }
+
+.armma-accordion-body code,
+.armma-more-body code {
+    direction: ltr;
+    display: inline-block;
+    background: #f0f0f1;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* ---------- امضای پایین صفحه ---------- */
+
+.armma-footer-credit {
+    text-align: center;
+    color: var(--armma-muted);
+    font-size: 12px;
+    margin: 20px 0 10px;
+}
+
+.armma-footer-credit a {
+    color: var(--armma-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.armma-footer-credit a:hover { text-decoration: underline; }
+
+/* ---------- صفحه‌های باریک ---------- */
+
+@media screen and (max-width: 782px) {
+    .armma-wrap { margin-left: 10px; }
+
+    .armma-header { padding: 16px; }
+
+    .armma-field-label { flex-basis: 100%; padding-top: 0; }
+
+    .armma-card-head,
+    .armma-card-body,
+    .armma-save-bar { padding-right: 16px; padding-left: 16px; }
+
+    input.armma-input,
+    .armma-amount-input { width: 100%; }
+
+    .armma-nav .nav-tab { margin-bottom: 4px; }
+}
+
+/* ---------- نشان‌ها و باکس آرما در صفحه ویرایش سفارش ---------- */
+
+.armma-badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 2px 11px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.armma-badge-success {
+    background: var(--armma-success-bg);
+    color: var(--armma-success);
+    border: 1px solid var(--armma-success-border);
+}
+
+.armma-badge-error {
+    background: var(--armma-error-bg);
+    color: var(--armma-error);
+    border: 1px solid var(--armma-error-border);
+}
+
+.armma-order-box {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+}
+
+.armma-order-box h4 {
+    margin: 0 0 8px;
+}
+
+.armma-order-log-list {
+    margin: 0 0 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.armma-order-log-list li {
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.armma-log-date {
+    color: #888;
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+.armma-log-error {
+    color: var(--armma-error);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.armma-resend-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
